@@ -1,29 +1,31 @@
-# vue-project
+# Examen Encriptador
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto permite encriptar y desencriptar frases. Para poner en funcionamiento el proyecto, sigue estos pasos:
 
-## Recommended IDE Setup
+## Instalación de Dependencias
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Primero, debes instalar las dependencias necesarias. Ejecuta el siguiente comando en la raíz del proyecto:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Ejecución del Proyecto
 
-```sh
-npm run dev
-```
+Para ejecutar el proyecto, debes iniciar el cliente y el servidor por separado. Utiliza los siguientes comandos en dos terminales diferentes:
 
-### Compile and Minify for Production
+1. **Iniciar el cliente:**
 
-```sh
-npm run build
-```
+   ```sh
+   npm run dev:client
+   ```
+
+2. **Iniciar el servidor:**
+
+   ```sh
+   npm run dev:server
+   ```
+
+## Uso del Proyecto
+
+Después de iniciar el cliente y el servidor, abre la página proporcionada por el cliente en tu navegador. Desde allí, podrás encriptar y desencriptar frases.

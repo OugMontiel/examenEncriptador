@@ -80,13 +80,16 @@ img {
   padding: 1em;
   display: flex;
   flex-direction: column;
+}
+
+.textoSin textarea{
+  padding-top: 3em;
   color: var(--color-secondary);
 }
 
 .btn {
   display: flex;
   justify-content: space-between;
-
 }
 
 .textoCon {
@@ -94,11 +97,11 @@ img {
   display: flex;
   flex-direction: column;
   color: var(--color-tertiary);
-
 }
 
 textarea {
   flex-grow: 1;
+  font-size: 1.5rem;
 }
 
 button {
@@ -122,6 +125,10 @@ textarea {
   border: none;
   outline: none;
   padding: 0.5em;
+}
 
+p{
+  margin: 0;
+  font-size: .8rem;
 }
 </style>

@@ -2,12 +2,12 @@
 <template>
   <div id="Interfaz">
     <div class="img">
-      <img src="/public/storage/img/Logo.png" alt="">
+      <img src="/storage/img/Logo.png" alt="">
     </div>
     <div class="textoSin">
       <textarea v-model="inputText" placeholder="Ingrese el texto aquí"></textarea>
       <p>
-        <img src="/public/storage/img/IconoExclamacion.png" alt="icono">
+        <img src="/storage/img/IconoExclamacion.png" alt="icono">
         Solo letras minúsculas y sin acentos
       </p>
       <div class="btn">
@@ -18,7 +18,7 @@
     <div class="textoCon">
       <div class="targeta">
         <div class="visible" v-if="!outputText">
-          <img src="/public/storage/img/Muñeco.png" alt="">
+          <img src="/storage/img/Muñeco.png" alt="">
           <h1>Ningún mensaje fue encontrado</h1>
           <p>Ingresa el texto que desees encriptar o desencriptar.</p>
         </div>
@@ -46,16 +46,16 @@ export default {
     };
   },
   methods: {
-    handleEncrypt() {
+    async handleEncrypt() {
       if (validateInput(this.inputText)) {
-        this.outputText = encryptText(this.inputText);
+        this.outputText = await encryptText(this.inputText);
       } else {
         alert("Por favor, ingrese solo letras minúsculas sin caracteres especiales ni acentos.");
       }
     },
-    handleDecrypt() {
+    async handleDecrypt() {
       if (validateInput(this.inputText)) {
-        this.outputText = decryptText(this.inputText);
+        this.outputText = await decryptText(this.inputText);
       } else {
         alert("Por favor, ingrese solo letras minúsculas sin caracteres especiales ni acentos.");
       }

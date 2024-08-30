@@ -1,20 +1,37 @@
 // src/components/Encriptacion.js
 
-export function encryptText(inputText) {
-    return inputText
-      .replace(/e/g, 'enter')
-      .replace(/i/g, 'imes')
-      .replace(/a/g, 'ai')
-      .replace(/o/g, 'ober')
-      .replace(/u/g, 'ufat');
+const API_URL = 'http://localhost:3000/api/encryption';
+
+export async function encryptText(text) {
+  try {
+    const response = await fetch(`${API_URL}/encrypt`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text }),
+    });
+    const data = await response.json();
+    return data.result;
+  } catch (error) {
+    console.error('Error al encriptar:', error);
+    return '';
   }
-  
-  export function decryptText(inputText) {
-    return inputText
-      .replace(/enter/g, 'e')
-      .replace(/imes/g, 'i')
-      .replace(/ai/g, 'a')
-      .replace(/ober/g, 'o')
-      .replace(/ufat/g, 'u');
+}
+
+export async function decryptText(text) {
+  try {
+    const response = await fetch(`${API_URL}/decrypt`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text }),
+    });
+    const data = await response.json();
+    return data.result;
+  } catch (error) {
+    console.error('Error al desencriptar:', error);
+    return '';
   }
-  
+}

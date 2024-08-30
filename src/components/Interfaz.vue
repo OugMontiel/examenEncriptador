@@ -17,9 +17,16 @@
     </div>
     <div class="textoCon">
       <div class="targeta">
-        <textarea v-model="outputText" readonly placeholder="Resultado aquí"></textarea>
-        <div class="btn">
-          <button @click="handleCopy">Copiar</button>
+        <div class="visible" v-if="!outputText">
+          <img src="/public/storage/img/Muñeco.png" alt="">
+          <h1>Ningún mensaje fue encontrado</h1>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+        <div class="invisible" v-if="outputText">
+          <textarea v-model="outputText" readonly placeholder="Resultado aquí"></textarea>
+          <div class="btn">
+            <button @click="handleCopy">Copiar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -55,6 +62,8 @@ export default {
     },
     handleCopy() {
       copyToClipboard(this.outputText);
+      this.inputText = '';
+      this.outputText = '';
     }
   }
 };
@@ -141,15 +150,31 @@ p {
 .targeta textarea {
   color: var(--color-tertiary);
 }
+.visible{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.visible p{
+  font-size: 1.2rem;
+}
+
 @media (max-width: 1200px) {
   #Interfaz {
-  display: grid;
-  grid-template-columns: auto;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .visible img{
+    display: none;
+  }
 }
-}
+
 @media (max-width: 800px) {
   .btn {
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 }
 </style>

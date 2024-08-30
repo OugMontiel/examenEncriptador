@@ -162,6 +162,15 @@ p {
   font-size: 1.2rem;
 }
 
+.invisible{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 @media (max-width: 1200px) {
   #Interfaz {
     display: grid;
@@ -170,6 +179,9 @@ p {
   .visible img{
     display: none;
   }
+  .textoSin textarea {
+  padding-top: 0;
+}
 }
 
 @media (max-width: 800px) {

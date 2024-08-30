@@ -141,4 +141,15 @@ p {
 .targeta textarea {
   color: var(--color-tertiary);
 }
+@media (max-width: 1200px) {
+  #Interfaz {
+  display: grid;
+  grid-template-columns: auto;
+}
+}
+@media (max-width: 800px) {
+  .btn {
+  flex-direction: column;
+}
+}
 </style>

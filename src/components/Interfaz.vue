@@ -1,10 +1,12 @@
 <!-- src/components/Interfaz.vue -->
 <template>
   <div id="Interfaz">
-    <img src="/public/storage/img/Logo.png" alt="">
+    <div class="img">
+      <img src="/public/storage/img/Logo.png" alt="">
+    </div>
     <div class="textoSin">
       <textarea v-model="inputText" placeholder="Ingrese el texto aquí"></textarea>
-      <p> 
+      <p>
         <img src="/public/storage/img/IconoExclamacion.png" alt="icono">
         Solo letras minúsculas y sin acentos
       </p>
@@ -65,25 +67,33 @@ export default {
   grid-template-columns: auto 3fr 2fr;
 }
 
-img {
+.img {
   padding: 1em;
+}
+
+img {
+  object-fit: contain;
+  box-sizing: border-box;
 }
 
 .textoSin {
   padding: 1em;
   display: flex;
   flex-direction: column;
+  color: var(--color-secondary);
 }
-.btn{
+
+.btn {
   display: flex;
   justify-content: space-between;
-  
+
 }
 
 .textoCon {
   padding: 1em;
   display: flex;
   flex-direction: column;
+  color: var(--color-tertiary);
 
 }
 
@@ -97,6 +107,21 @@ button {
   margin: 1em;
   padding: 1em;
   background-color: transparent;
-  border: 1px solid var(--bg-prymary);
+  border: 1px solid var(--bg-button-prymary);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--bg-button-prymary);
+  border-color: var(--bg-button-secondary);
+  color: var(--bg-quarter);
+}
+
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.5em;
+
 }
 </style>

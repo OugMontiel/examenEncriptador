@@ -16,9 +16,11 @@
       </div>
     </div>
     <div class="textoCon">
-      <textarea v-model="outputText" readonly placeholder="Resultado aquí"></textarea>
-      <div class="btn">
-        <button @click="handleCopy">Copiar</button>
+      <div class="targeta">
+        <textarea v-model="outputText" readonly placeholder="Resultado aquí"></textarea>
+        <div class="btn">
+          <button @click="handleCopy">Copiar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -82,7 +84,7 @@ img {
   flex-direction: column;
 }
 
-.textoSin textarea{
+.textoSin textarea {
   padding-top: 3em;
   color: var(--color-secondary);
 }
@@ -96,12 +98,15 @@ img {
   padding: 1em;
   display: flex;
   flex-direction: column;
-  color: var(--color-tertiary);
 }
 
 textarea {
   flex-grow: 1;
   font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1em;
 }
 
 button {
@@ -120,15 +125,20 @@ button:hover {
   color: var(--bg-quarter);
 }
 
-textarea {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding: 0.5em;
-}
-
-p{
+p {
   margin: 0;
   font-size: .8rem;
+}
+
+.targeta {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-quarter);
+  border-radius: 1.5em;
+}
+
+.targeta textarea {
+  color: var(--color-tertiary);
 }
 </style>
